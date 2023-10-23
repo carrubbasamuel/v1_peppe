@@ -1,0 +1,83 @@
+.text-container {
+  height: 500px;
+  overflow: hidden;
+  line-height: 30px;
+  background-color: #1C1D24;
+  background-image: url(https://themes.pixelwars.org/archy/demo-01/wp-content/uploads/sites/2/2023/05/3d-render-abstract-deatailed-shape-dynamic-futuristic-background.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.text-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(108, 106, 106, 0.077);
+}
+
+.text-container span {
+  font-size: 116px;
+  font-family: "Bebas Neue", Sans-serif;
+  padding: 0 80px;
+  color: transparent !important;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #333;
+  text-shadow: none;
+  -webkit-text-stroke-color: #FFFBFB;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+
+.word {
+  position: relative;
+  z-index: 1;
+}
+
+.animated1{
+  animation: word 25s linear infinite;
+}
+
+.animated2 {
+  animation: word2 25s linear infinite;
+}
+@keyframes word {
+  0% {
+    transform: translateX(0); 
+  }
+
+  100% {
+    transform: translateX(-100%); 
+  }
+}
+
+@keyframes word2 {
+  0% {
+    transform: translateX(0); 
+  }
+
+  100% {
+    transform: translateX(-100%); 
+  }
+}
+
+
+
+
+
+.text-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.412);
+}

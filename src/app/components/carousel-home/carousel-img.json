@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "img": "/carousel-img/img_1.jpg",
+        "caption": "Transforming ideas into structures"
+    },
+    {
+        "id": 2,
+        "img": "/carousel-img/img_2.jpg",
+        "caption": "Building your vision, creating reality"
+    },
+    {
+        "id": 3,
+        "img": "/carousel-img/img_3.jpg",
+        "caption": "Architecture is our passion, design is our art"
+    },
+    {
+        "id": 4,
+        "img": "/carousel-img/img_4.jpg",
+        "caption": "Designing spaces, creating experiences"
+    }
+]
