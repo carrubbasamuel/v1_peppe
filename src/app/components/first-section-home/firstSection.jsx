@@ -1,43 +1,34 @@
 "use client"
 
-import { FaArrowUp } from 'react-icons/fa';
+import Typewriter from '@/app/components/typewrier/Typewriter';
+import LinkComponent from '@/app/components/link-component/link-component';
 import { Fade } from 'react-reveal';
 import './style.css';
 
 export default function FirstSection() {
     return (
-        <div className='d-flex' style={{ gap: '300px' }}>
+        <div className='d-flex' style={{ gap: '200px' }}>
+            <Fade bottom cascade>
             <div className='title'>
-                <h1 className='typewriter'>
-                    <Typewriter text={'We specialized in these field.'} />
-                </h1>
+                
+                    <Typewriter text={'We specialized in these fields.'} />
+                
+                <hr />
                 <Fade bottom>
                     <h2 className='elementor-subtitle'>
                         The homepage of an architecture website serves as the first impression for visitors and should provide a compelling overview of the architecture firm and its offerings.
                     </h2>
                 </Fade>
             </div>
+            </Fade>
 
-            {/* Link */}
-            <div className='d-flex justify-content-start align-items-end'>
-                <Fade bottom>
-                    <div className='d-flex justify-content-center align-items-center position-relative'>
-                        <p className='service-link'>All Services</p>
-                        <FaArrowUp size={20} className='ms-2 arrow-service position-absolute' />
-                    </div>
-                </Fade>
-            </div>
+            <LinkComponent text={'All Services'} />
 
         </div>
     )
 }
 
-const Typewriter = ({ text }) => {
-    return (
-        <Fade cascade>
-            {text}
-        </Fade>
-    );
-}
+
+
 
 

@@ -1,0 +1,22 @@
+#second-section {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 1180px;
+}
+
+h2 {
+    padding-top: 30px;
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 80px;
+}

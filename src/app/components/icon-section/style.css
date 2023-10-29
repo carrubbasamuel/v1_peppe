@@ -1,0 +1,44 @@
+.container-icon{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 180px;
+}
+
+.container-icon .react-reveal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-icon .react-reveal .number{
+    width: 20px;
+    height: 20px;
+    color: #ffffff;
+    padding: 15px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-60%);
+}
+
+
+.number p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.container-icon hr{
+    width: 0;
+    height: 2px;
+    border: none;
+    background-color: black;
+    color: black;
+}

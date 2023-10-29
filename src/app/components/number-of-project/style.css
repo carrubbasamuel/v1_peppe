@@ -1,6 +1,8 @@
 .date{
-    margin-top: 100px;
-    padding-left: 100px;
+    margin-top: 120px;
+    justify-content: space-around;
+    gap: 50px;
+    width: 1200px;
 }
 
 .date h1{

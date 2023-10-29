@@ -1,0 +1,32 @@
+
+#second-section hr{
+    margin: 0;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #797777, #ccc);
+    color: #797777;
+}
+
+.enter-animation {font-family: 'Urbanist', sans-serif;
+    font-size: 116px;
+    font-weight: 700;
+    line-height: 1em;
+    letter-spacing: -0.04em;
+    padding-bottom: 30px;
+    display: inline-block;
+    animation: enter 0.1s cubic-bezier(.26,-.14,0,1.01) forwards;
+    opacity: 0; 
+}
+
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: translateX(100px) ;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

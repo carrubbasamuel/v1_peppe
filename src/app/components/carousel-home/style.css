@@ -16,20 +16,20 @@
     object-fit: cover;
 }
 
+
 .slick-active img{
-    transform: scale(1.2);
-    animation: zoom 20s ease-out;
+    animation: zoom 20s forwards;
+    height: 100vh!important;
+    width: 100%;
 }
 
-
 @keyframes zoom {
-    0% {
+    from {
         transform: scale(1);
     }
-    100% {
-        transform: scale(1.2);
+    to {
+        transform: scale(1.3);
     }
-
 }
 
 

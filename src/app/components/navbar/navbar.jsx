@@ -11,6 +11,9 @@ export default function NavBar() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
+        if(window.scrollY > 100){
+            setScrolled(true);
+        }
         const handleScroll = () => {
             const offset = window.scrollY;
             if (offset > 100) {
