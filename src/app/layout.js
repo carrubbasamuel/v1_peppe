@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./global.css"
+import Footer from "./components/footer/footer";
 
 
 
@@ -18,12 +19,13 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300&family=Urbanist:ital,wght@1,500&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300&family=Urbanist:ital,wght@1,500&display=swap" rel="stylesheet" crossOrigin="true" />
       </head>
       <body>
         <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );

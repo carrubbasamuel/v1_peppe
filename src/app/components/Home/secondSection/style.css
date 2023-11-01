@@ -1,4 +1,4 @@
-#second-section {
+section#second {
     margin: 100px auto;
     display: flex;
     flex-direction: column;
@@ -10,11 +10,12 @@
 h2 {
     padding-top: 30px;
     font-size: 32px;
-    font-weight: 400;
+    font-weight: 200;
     font-family: 'Urbanist', sans-serif;
 }
 
 .main-container{
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     align-items: start;

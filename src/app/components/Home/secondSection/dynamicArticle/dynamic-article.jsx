@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 
-const ArticleSelection = () => {
+const DynamicArticle = () => {
     const type = [
         {
             type: 'history',
@@ -51,4 +51,4 @@ const ArticleSelection = () => {
     );
 };
 
-export default ArticleSelection;
+export default DynamicArticle;

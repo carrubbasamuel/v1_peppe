@@ -12,19 +12,34 @@
 .slick-slider img{
     width: 100%;
     height: 100vh!important;
-    filter: brightness(0.5);
     object-fit: cover;
 }
 
 
+
+.slick-slider::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh!important;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.382);
+    z-index: 0;
+}
+
+
 .slick-active img{
-    animation: zoom 20s forwards;
+    filter: brightness(0.5);
+    animation: forwards zoom 16s;
     height: 100vh!important;
     width: 100%;
 }
 
+
+
 @keyframes zoom {
-    from {
+    from {   
         transform: scale(1);
     }
     to {
@@ -41,7 +56,7 @@
     margin: 0;
     transform: rotate(90deg)!important;
     left: 70px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .slick-dots li button::before{
@@ -69,7 +84,7 @@
 .pre-carousel, .next-carousel{
     transition: all 0.3s ease-in-out;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     cursor: pointer;
     z-index: 1;
     border: 1px solid white;
@@ -93,7 +108,7 @@
     position: absolute;
     top: 0;
     left: 20%;
-    z-index: 1;
+    z-index: 2;
     width: 30%;
     height: 70%;
     background-color: rgba(0, 0, 0, 0.382);
@@ -120,22 +135,23 @@
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 890px;
- 
+    z-index: 4;
 }
 
+
 .carousel-cap{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #fff;
     text-align: center;
     font-size: 96px;
     font-weight: 600;
-    line-height: 1em;
-    z-index: 1;
-    
+    line-height: 1em;    
+    position: absolute;
+    z-index: 4;
 }
 
 .slick-active .carousel-cap{
@@ -154,70 +170,7 @@
     }
 }
 
-.carousel-footer{
-    position: absolute;
-    bottom: -50px;
-    right: 0;
-    width: 800px;
-    height: 150px;
-    background-color: white;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    padding: 20px;
-    z-index: 1;
-}
 
-
-.carousel-footer p{
-    font-size: 14px;
-    font-weight: 600;
-    color: black;
-    margin: 0;
-    padding: 20px;
-    padding-right: 20px;
-    margin-right: 20px;
-    border-right: 2px solid black;
-}
-
-.slick-active .carousel-footer p{
-    animation: bottom-top 1s ease-in-out;
-}
-
-@keyframes bottom-top {
-    from {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0%);
-    }
-}
-
-.carousel-footer span{
-    font-size: 16px;
-    font-weight: 600;
-    color: black;
-    margin: 0;
-    padding: 20px;
-    padding-left: 20px;
-}
-
-.slick-active .carousel-footer span{
-    animation: rigth-left 1s ease-in-out;
-}
-
-@keyframes rigth-left {
-    from {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0%);
-    }
-}
 
 
 

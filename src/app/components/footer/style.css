@@ -1,0 +1,47 @@
+#footer {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+
+}
+
+#footer::before {
+    content: "";
+    background-image: url(https://themes.pixelwars.org/archy/demo-01/wp-content/uploads/sites/2/2023/05/3d-rendering-modern-building-with-clear-sky.jpg);
+    background-position: center center;
+    opacity: 0.11;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.box-footer {
+    padding: 20px;
+    margin: 0;
+}
+
+
+
+#closer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: black;
+    font-family: 'Urbanist', sans-serif;
+}
+
+#closer p {
+    margin: 0;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 5px;
+}

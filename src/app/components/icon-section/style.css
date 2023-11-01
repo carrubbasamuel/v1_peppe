@@ -1,44 +1,101 @@
+
 .container-icon{
+    padding: 130px 100px;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.inner-icon{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 300px;
+}
+
+
+h5{
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    color: #000;
+    margin-top: 30px;
+}
+
+.box{
+   
     width: 100%;
-    padding: 10px 20px;
+    opacity: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 150px 180px;
+    animation: enterIcon 0.5s forwards;
+    
 }
 
-.container-icon .react-reveal{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.container-icon .react-reveal .number{
-    width: 20px;
-    height: 20px;
-    color: #ffffff;
-    padding: 15px;
-    background-color: black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(-60%);
-}
-
-
-.number p{
-    margin: 0;
+.number{
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
     font-size: 14px;
     font-weight: 600;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container-icon hr{
-    width: 0;
-    height: 2px;
-    border: none;
-    background-color: black;
-    color: black;
+
+.line {
+    position: absolute;
+    height: 1px;
+    width: 200px;
+    opacity: 0;
+    background-color: #000;
+    top: 50%;
+    right: -70%;
+    transform-origin: left;
+    animation: enterLine 0.5s forwards;
+}
+
+
+@keyframes enterLine{
+    0%{
+        opacity: 0;
+        transform: translate(-50%) scaleX(0);
+    }
+    100%{
+       opacity: 1;
+         transform: translate(-50%) scaleX(1);
+
+    }
+}
+
+@keyframes enterIcon{
+    0%{
+        opacity: 0;
+        transform: scale(0);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.box-text{
+    opacity: 0;
+    animation: miao 0.6s forwards;
+}
+
+@keyframes miao{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }

@@ -1,11 +1,11 @@
-"use client"
+'use client'
 
 import { useEffect, useRef, useState } from 'react';
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from 'react-icons/ai';
 import carouselJSON from './carousel-img.json';
 import './style.css';
 
-const CarouselDiscover = () => {
+const CarouselCostum = () => {
     const [photos, setPhotos] = useState(carouselJSON);
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -35,14 +35,13 @@ const CarouselDiscover = () => {
             rightElementRef.current.classList.add('moveOutRight');
             leftElementRef.current.classList.add('moveOutLeft');
             centerElementRef.current.classList.add('moveOutCenter');
-
+    
             setTimeout(() => {
                 const [firstPhoto, ...restPhotos] = photos;
                 setPhotos([...restPhotos, firstPhoto]);
                 setActiveIndex(prev => (prev + 1) % photos.length);
             }, 1000);
-        }
-        else return;
+        } else return;
     }
 
     useEffect(() => {
@@ -96,4 +95,4 @@ const CarouselDiscover = () => {
     )
 }
 
-export default CarouselDiscover;
+export default CarouselCostum;

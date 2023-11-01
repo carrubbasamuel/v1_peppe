@@ -1,0 +1,109 @@
+
+section#terza .box-title{
+    padding: 100px 250px;
+}
+
+.subtitle{
+    font-family: 'Urbanist', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 20px;
+    line-height: 1;
+}
+
+.stay-connected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("https://themes.pixelwars.org/archy/demo-01/wp-content/uploads/sites/2/2023/05/oculus-building-2.jpg");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 480px;
+    width: 100%;
+    position: relative;
+}
+
+.stay-connected::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.384);
+    z-index: 1;
+}
+
+.stay-connected h1{
+    font-family: 'Urbanist', sans-serif;
+    position: relative;
+    z-index: 1;
+    font-size: 72px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    padding: 0 50px;
+    line-height: 1;
+}
+
+.stay-connected p{
+    font-family: 'Urbanist', sans-serif;
+    position: relative;
+    margin-top: 20px;
+    z-index: 2;
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    padding: 0 50px;
+    line-height: 1;
+}
+
+
+.talk-button{
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-family: 'Urbanist', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.talk-button:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+.talk-button p{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+}
+
+
+.talk-button:hover p{
+    color: black;
+}
+
+.arrow-stay-connected{
+    transform: rotate(45deg);
+    margin-bottom: 2px;
+    margin-left: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.talk-button:hover .arrow-stay-connected{
+    transform: translateX(5px) rotate(45deg);
+}
