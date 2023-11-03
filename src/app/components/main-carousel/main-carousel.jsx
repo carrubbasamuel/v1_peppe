@@ -34,6 +34,7 @@ export default function MainCarousel() {
     const settings = {
         dots: true,
         fade: true,
+        fadeSpeed: 100,
         infinite: true,
         autoplay: true,
         autoplaySpeed: 5000,

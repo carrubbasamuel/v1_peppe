@@ -1,13 +1,8 @@
-"use client"
 
-
-import { Fade } from 'react-reveal';
 import './style.css';
 
 export default function WordCarousel() {
   return (
-    <Fade>
-
     <div className="text-container">
       <div className="word animated1">
         <span>Construction</span>
@@ -22,7 +17,7 @@ export default function WordCarousel() {
         <span>Thinking outside of the box</span>
       </div>
     </div>
-    </Fade>
+    
   );
 };
 

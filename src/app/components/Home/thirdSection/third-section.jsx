@@ -9,20 +9,22 @@ import './style.css';
 
 const ThirdSection = () => {
     return (
-        <section id='terza'>
-            <div className='box-title w-100'>
-                <div className='d-flex justify-content-between'>
-                    <Fade bottom cascade>
-                        <div className='d-flex align-items-start justify-content-start'>
-                            <div>
-                                <Typewriter text={'"Stay Connected"'} />
-                            </div>
+        <section>
+            <div id='third-section'>
+                <Fade bottom cascade>
 
-                        </div>
+                    <div className='d-flex justify-content-end'>
                         <LinkComponent text={'Contact Us'} />
 
-                    </Fade>
-                </div>
+                    </div>
+
+                    <div className='d-flex justify-content-start'>
+                        <Typewriter text={'"Stay Connected"'} />
+                    </div>
+
+
+                </Fade>
+
                 <hr />
                 <Fade bottom>
                     <p className='subtitle'>

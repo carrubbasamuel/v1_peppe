@@ -32,6 +32,8 @@
 .slick-active img{
     filter: brightness(0.5);
     animation: forwards zoom 16s;
+    animation-delay: 2.5s;
+    ;
     height: 100vh!important;
     width: 100%;
 }

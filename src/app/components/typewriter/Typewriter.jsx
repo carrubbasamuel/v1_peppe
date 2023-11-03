@@ -6,7 +6,7 @@ const Typewriter = ({ text }) => {
             char = '\u00A0';
         }
         return (
-            <div key={index} className='enter-animation' style={{ animationDelay: `${index * 0.06}s` }}>
+            <div key={index} className='enter-animation' style={{ animationDelay: `${index * 0.05}s` }}>
                 {char}
             </div>
             
