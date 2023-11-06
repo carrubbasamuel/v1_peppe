@@ -1,23 +1,29 @@
-
 import './style.css';
 
 export default function WordCarousel() {
+
+  const words = [
+    'Construction',
+    'Interior Design',
+    'Modern Structures',
+    'Thinking outside of the box'
+  ]
+
   return (
     <div className="text-container">
-      <div className="word animated1">
-        <span>Construction</span>
-        <span>Interior Design</span>
-        <span>Modern Structures</span>
-        <span>Thinking outside of the box</span>
+
+      <div className="word">
+          {words.map((word, index) => (
+            <span key={index} >{word}</span>
+          ))}
       </div>
-      <div className='word animated2'>
-        <span>Construction</span>
-        <span>Interior Design</span>
-        <span>Modern Structures</span>
-        <span>Thinking outside of the box</span>
+
+      <div className="word">
+          {words.map((word, index) => (
+            <span key={index} >{word}</span>
+          ))}
       </div>
     </div>
-    
   );
 };
 

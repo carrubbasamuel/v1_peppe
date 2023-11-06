@@ -40,15 +40,9 @@
 .word {
   position: relative;
   z-index: 1;
-}
-
-.animated1{
   animation: word 25s linear infinite;
 }
 
-.animated2 {
-  animation: word2 25s linear infinite;
-}
 
 @keyframes word {
   0% {
@@ -60,15 +54,6 @@
   }
 }
 
-@keyframes word2 {
-  0% {
-    transform: translateX(0); 
-  }
-
-  100% {
-    transform: translateX(-100%); 
-  }
-}
 
 
 
