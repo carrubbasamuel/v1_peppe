@@ -35,7 +35,7 @@ export default function NavBar() {
         <div id="navbar" className={scrolled ? 'nav-scroll' : ''}>
         <div>
             <div className='navbar'>
-                <div className='d-flex justify-content-between w-100 m-4'>
+                <div className='d-flex justify-content-between  m-4'>
                     <div className="logo">  
                         <Image src={scrolled ? "/asset/logo.png" : "/asset/logo-light.png"} alt="logo"  width={120} height={30}/>
                     </div>

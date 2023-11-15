@@ -111,3 +111,50 @@
 .talk-button:hover .arrow-stay-connected{
     transform: translateX(5px) rotate(45deg);
 }
+
+.about-link{
+    display: flex;
+    justify-content: end;
+}
+
+.third-title{
+    display: flex;
+    justify-content: start;
+}
+
+@media screen and (max-width: 768px) {
+    #third-section{
+        width: 100%;
+    }
+    .stay-connected{
+        height: 400px;
+    }
+    .stay-connected h1{
+        font-size: 40px;
+    }
+    .stay-connected p{
+        font-size: 18px;
+    }
+    .talk-button{
+        padding: 10px 20px;
+    }
+    .talk-button p{
+        font-size: 14px;
+    }
+
+    .third-title{
+        justify-content: center;
+    }
+
+    .about-link{
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .subtitle{
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+    
+}

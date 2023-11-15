@@ -22,3 +22,20 @@
     font-weight: 400;
     margin-top: 30px;
 }
+
+@media screen and (max-width: 768px) {
+    .date{
+        text-wrap: nowrap;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+    .date h1{
+        font-size: 100px;
+    }
+    .date h3{
+        font-size: 16px;
+    }
+    
+}

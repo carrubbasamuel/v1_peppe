@@ -12,7 +12,7 @@ const LinkComponent = ({ text }) => {
             <Fade bottom>
                 <div className='d-flex justify-content-center align-items-end service-container'>
                     <p className='service-link'>{text}</p>
-                    <FaArrowUp size={20} className='ms-2 mb-2 arrow-service' />
+                    <FaArrowUp size={20} className='arrow-service' />
                 </div>
             </Fade>
     )

@@ -11,7 +11,7 @@ export default function FirstSection() {
     return (
 
         <section id='first'>
-            <div className="d-flex" style={{gap: '150px'}}>
+            <div className="d-flex containerfirst" >
                 <Fade bottom cascade>
                 <div className='title'>
 

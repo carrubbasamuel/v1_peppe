@@ -177,3 +177,154 @@
     cursor: pointer;
     transform: translateX(-10px);
 }
+
+@media screen and (max-width: 768px) {
+   
+    .astral-carousel-item {
+        width: 300px;
+        height: 300px;
+        
+    }
+
+
+    .astral-carousel {
+        width: 300px;
+        height: 300px;
+    }
+    .astral-carousel-control-container{
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .left {
+        top: -10px;
+        left: -10px;
+    }
+
+    .center {
+        top: 0;
+        left: 0;
+    }
+
+    .right {
+        top: 10px;
+        left: 10px;
+    }
+
+    .moveOutLeft {
+        animation: moveOutLeft 1s ease-in-out;
+    }
+
+    @keyframes moveOutLeft {
+        0% {
+            top : 0;
+            left: 0;
+        }
+        100% {
+            top: -10px;
+            left: -10px;
+        }
+    }
+
+    .moveOutCenter {
+        animation: moveOutCenter 0.8s ease-in-out forwards;
+    }
+
+    @keyframes moveOutCenter {
+        0% {
+            top: 0;
+            left: 0;
+        }
+        100% {
+            top: 10px;
+            left: 10px;
+        }
+    }
+
+    .moveOutRight {
+        animation: moveOutRight 1s ease-in-out forwards;
+    }
+
+    @keyframes moveOutRight {
+        0% {
+            
+            transform: translateX(0);
+        }
+        40% {
+            transform: translateX(10%);
+            z-index: 0;
+        }
+        100%{
+            z-index: 0;
+            top: 0;
+            left: 0;
+        }
+    }
+
+
+    .moveInLeft {
+        z-index: 1;
+        animation: moveInLeft 1s ease-in-out forwards;
+    }
+
+    @keyframes moveInLeft {
+        0% {
+            top: 10px;
+            left: 10px;
+        }
+        100% {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .moveInCenter {
+        z-index: 2;
+        animation: moveInCenter 0.8s ease-in-out forwards;
+    }
+
+    @keyframes moveInCenter {
+        0% {
+            top: 10px;
+            left: 10px;
+        }
+        100% {
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .moveInRight {
+        z-index: 3;
+        animation: moveInRight 1s  forwards;
+    }
+
+    @keyframes moveInRight {
+        0% {
+            top: 0;
+            left: 0;
+        }
+        40% {
+            transform: translateX(10%);
+        }
+        100% {
+            top: 10px;
+            left: 10px;
+        }
+    }
+
+    .astral-carousel-control-container{
+        font-size: 16px;
+        margin-left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+
+
+
+
+    
+}

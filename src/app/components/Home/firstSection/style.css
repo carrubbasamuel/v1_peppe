@@ -1,4 +1,5 @@
 section#first{
+    width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 6% 5% 6% 5%;
@@ -8,6 +9,16 @@ section#first{
     align-items: center;
 }
 
+#first>*{
+    width: 100%;
+}
+
+
+.containerfirst{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
 
 .title{
     width: 850px;
@@ -31,7 +42,19 @@ section#first{
 
 
 
-
+@media screen and (max-width: 768px) {
+    .containerfirst{
+        gap: 50px;
+        flex-direction: column;
+    }
+    .title{
+        width: 100%;
+    }
+    .elementor-subtitle{
+        font-size: 20px;
+    }
+    
+}
 
 
 

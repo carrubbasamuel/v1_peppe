@@ -176,7 +176,79 @@
 
 
 
+@media screen and (max-width: 768px){
+    .slick-slider{
+        height: 100vh!important;
+    }
+    .slick-slider .slick-list{
+        height: 100vh!important;
+    }
+    .slick-slider img{
+        height: 100vh!important;
+    }
+    .slick-slider::before{
+        height: 100vh!important;
+    }
+    .slick-active img{
+        height: 100vh!important;
+    }
+    .slick-dots{
+        display: none!important;
+    }
+    
+    .next-carousel{
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    .pre-carousel{
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .carousel-div-text{
+        display: none!important;
+    }
+    .main-text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        z-index: 4;
+    }
+    .carousel-cap{
+        font-size: 50px;
+    }
+    .slick-active .carousel-cap{
+        animation: right-to-left 1s ease-in-out;
+    }
+    .slick-active .carousel-div-text{
+        animation: top-bottom 1s ease-in-out;
+    }
+    .pre-carousel{
+        top: inherit;
+        right: inherit;
+        bottom: 5%;
+        left: 35%;
+        
+    }
+    .next-carousel{
+        top: inherit;
+        right: inherit;
+       
+        bottom: 5%;
+        right: 35%;
+    }
 
+    .pre-carousel, .next-carousel{
+        font-size: 18px;
+        padding: 15px;
+    }
+}
 
 
 

@@ -68,3 +68,15 @@
   height: inherit;
   background-color: rgba(0, 0, 0, 0.412);
 }
+
+@media screen and (max-width: 768px) {
+  .text-container {
+    height: 300px;
+  }
+
+  .text-container span {
+    font-size: 50px;
+    padding: 0 20px;
+  }
+  
+}

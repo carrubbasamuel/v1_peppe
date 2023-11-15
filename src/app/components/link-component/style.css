@@ -3,6 +3,7 @@
     transition: all 0.3s ease-in-out;
 }
 
+
 .service-link {
     font-size: 18px;
     font-weight: 500;
@@ -12,6 +13,7 @@
 
 .service-container{
     padding-bottom: 20px;
+    gap: 10px;
 }
 .service-link:after {
     content: "";
@@ -30,3 +32,5 @@
     
     transform: translateX(10px) rotate(45deg);
 }
+
+

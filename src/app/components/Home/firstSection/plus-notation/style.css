@@ -9,3 +9,14 @@
     font-weight: 500;
     text-wrap: nowrap;
 }
+
+@media screen and (max-width: 768px) {
+    .pro{
+        
+        margin-top: 50px;
+    }
+    .pro p{
+        font-size: 16px;
+    }
+    
+}

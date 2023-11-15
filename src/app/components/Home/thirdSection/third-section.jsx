@@ -13,12 +13,12 @@ const ThirdSection = () => {
             <div id='third-section'>
                 <Fade bottom cascade>
 
-                    <div className='d-flex justify-content-end'>
+                    <div className='about-link'>
                         <LinkComponent text={'Contact Us'} />
 
                     </div>
 
-                    <div className='d-flex justify-content-start'>
+                    <div className='third-title'>
                         <Typewriter text={'"Stay Connected"'} />
                     </div>
 
