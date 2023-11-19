@@ -25,7 +25,7 @@
 
 @media screen and (max-width: 768px) {
     .date{
-        text-wrap: nowrap;
+       text-wrap: nowrap;
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -35,7 +35,7 @@
         font-size: 100px;
     }
     .date h3{
-        font-size: 16px;
+        font-size: 12px;
     }
     
 }

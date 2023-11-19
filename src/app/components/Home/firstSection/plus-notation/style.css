@@ -15,6 +15,9 @@
         
         margin-top: 50px;
     }
+    .pro div.d-flex{
+        width: 100%;
+    }
     .pro p{
         font-size: 16px;
     }

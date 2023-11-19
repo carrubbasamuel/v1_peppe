@@ -1,9 +1,9 @@
-import NavBar from "@/app/components/navbar/navbar";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./global.css"
-import Footer from "./components/footer/footer";
+
 
 
 
@@ -21,9 +21,7 @@ export default function RootLayout({ children }) {
        
       </head>
       <body>
-        <NavBar />
         {children}
-        <Footer />
       </body>
     </html>
   );
