@@ -12,10 +12,9 @@
 
 @media screen and (max-width: 768px) {
     .pro{
-        
         margin-top: 50px;
     }
-    .pro div.d-flex{
+    .pro div.col{
         width: 100%;
     }
     .pro p{
