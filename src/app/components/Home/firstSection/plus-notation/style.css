@@ -19,6 +19,7 @@
         align-items: start;
         justify-content: start;
         width: 100%;
+        
     }
 
     .pro-container div {
@@ -33,7 +34,7 @@
         justify-content: start;
     }
 
-    .pro-container p {
-        font-size: 16px;
-    }
+
+
+   
 }
