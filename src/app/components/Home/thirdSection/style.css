@@ -128,6 +128,7 @@
     }
     .stay-connected{
         height: 400px;
+        background-attachment: inherit;
     }
     .stay-connected h1{
         font-size: 40px;

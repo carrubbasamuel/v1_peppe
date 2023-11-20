@@ -6,4 +6,5 @@ body{
     font-family: 'Jost', 'Poppins', sans-serif;
     box-sizing: border-box;
     overflow-wrap: break-word;
+    overflow-x: hidden;
 }
