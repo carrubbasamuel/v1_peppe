@@ -1,17 +1,20 @@
 'use client'
 
-import { CognitoUserAttribute, CognitoUserPool } from 'amazon-cognito-identity-js';
+import { CognitoUserAttribute } from 'amazon-cognito-identity-js';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { BiLoaderAlt } from 'react-icons/bi';
 import { FaUserCheck } from "react-icons/fa";
 import { MdReportGmailerrorred } from "react-icons/md";
+import useEncryption from '../Hooks/useEncryption';
+import userPool from '../UserPool';
 
 import './style.css';
 
 
 const Signup = () => {
     const router = useRouter();
+    const { encrypt } = useEncryption(process.env.NEXT_PUBLIC_ENCRYPTION_KEY);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -19,11 +22,7 @@ const Signup = () => {
     const [success, setSuccess] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const poolData = {
-        UserPoolId: 'us-east-1_gBZIYM2wT',
-        ClientId: '62qgftf12aegrocjpjbnv5gus8'
-    };
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -36,9 +35,7 @@ const Signup = () => {
         if (!username || !password || !confirmPassword) {
             setError('All fields are required');
             setLoading(false);
-            setTimeout(() => {
-                setError(null);
-            }, 3000);
+            
             return;
         }
 
@@ -46,13 +43,10 @@ const Signup = () => {
         if (password !== confirmPassword) {
             setError('The password and confirmation password do not match');
             setLoading(false);
-            setTimeout(() => {
-                setError(null);
-            }, 3000);
             return;
         }
 
-        const userPool = new CognitoUserPool(poolData);
+        
 
         const attributeList = [
             new CognitoUserAttribute({
@@ -65,14 +59,12 @@ const Signup = () => {
             if (err) {
                 setLoading(false);
                 setError(err.message || 'Error during the signup.');
-                setTimeout(() => {
-                    setError(null);
-                }, 3000);
             } else {
+                const userCrypt = encrypt(result.user.getUsername());
                 setLoading(false);
                 setSuccess(true)
                 setTimeout(() => {
-                    router.push('/');
+                    router.push(`/signup/verify_account?username=${userCrypt}`);
                 }, 3000);
             }
         });
