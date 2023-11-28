@@ -8,6 +8,7 @@ import './style.css';
 const CarouselCostum = () => {
     const [photos, setPhotos] = useState(carouselJSON);
     const [activeIndex, setActiveIndex] = useState(0);
+    const [clicked, setClicked] = useState(false);
 
     const rightElementRef = useRef(null);
     const leftElementRef = useRef(null);
@@ -15,7 +16,8 @@ const CarouselCostum = () => {
 
 
     const handlePrev = () => {
-        if (rightElementRef.current && leftElementRef.current && centerElementRef.current) {
+        if (!clicked && rightElementRef.current && leftElementRef.current && centerElementRef.current) {
+            setClicked(true)
             leftElementRef.current.classList.add('moveInRight');
             rightElementRef.current.classList.add('moveInCenter');
             centerElementRef.current.classList.add('moveInLeft');
@@ -25,13 +27,15 @@ const CarouselCostum = () => {
                 const restPhotos = photos.slice(0, -1);
                 setPhotos([lastPhoto, ...restPhotos]);
                 setActiveIndex(prev => (prev === 0 ? photos.length - 1 : prev - 1));
-            }, 1000);
+                setClicked(false)
+            }, 900);
         }
         else return;
     }
 
     const handleNext = () => {
-        if (rightElementRef.current && leftElementRef.current && centerElementRef.current) {
+        if (!clicked && rightElementRef.current && leftElementRef.current && centerElementRef.current) {
+            setClicked(true);
             rightElementRef.current.classList.add('moveOutRight');
             leftElementRef.current.classList.add('moveOutLeft');
             centerElementRef.current.classList.add('moveOutCenter');
@@ -40,16 +44,18 @@ const CarouselCostum = () => {
                 const [firstPhoto, ...restPhotos] = photos;
                 setPhotos([...restPhotos, firstPhoto]);
                 setActiveIndex(prev => (prev + 1) % photos.length);
-            }, 1000);
+                setClicked(false)
+
+            }, 900);
         } else return;
     }
+
 
     useEffect(() => {
         if (rightElementRef.current && leftElementRef.current && centerElementRef.current) {
             rightElementRef.current.classList.remove('moveOutRight');
             leftElementRef.current.classList.remove('moveOutLeft');
             centerElementRef.current.classList.remove('moveOutCenter');
-
             rightElementRef.current.classList.remove('moveInRight');
             leftElementRef.current.classList.remove('moveInLeft');
             centerElementRef.current.classList.remove('moveInCenter');

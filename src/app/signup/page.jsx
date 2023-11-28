@@ -5,11 +5,10 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { BiLoaderAlt } from 'react-icons/bi';
 import { FaUserCheck } from "react-icons/fa";
-import { MdReportGmailerrorred } from "react-icons/md";
 import useEncryption from '../Hooks/useEncryption';
 import userPool from '../UserPool';
 
-import './style.css';
+
 
 
 const Signup = () => {
@@ -79,7 +78,7 @@ const Signup = () => {
                     success &&
                     <div className='success-singup' >
                         <FaUserCheck size={32} />
-                        <p>Success, you can login in Atlassias Launcher</p>
+                        <p>Success, you can login in VREAL</p>
                         <div className='redirect'>
                             <p>Redirecting to site...</p>
                         </div>
@@ -90,7 +89,7 @@ const Signup = () => {
                     <>
                         <h2>Hello, signup in VREAL</h2>
                         <p className='text-muted'>
-                            Compile the form to signup in VREAL after you can login in VREAL Launcher
+                            Compile the form to signup in VREAL after you can login in VREAL
                         </p>
                         <div className="form-floating mb-3 w-100">
                             <input
@@ -128,11 +127,12 @@ const Signup = () => {
 
                         {error &&
                             <div className="error-singup" >
-                                <MdReportGmailerrorred size={24} />
+                                
                                 <p>{error}</p>
 
                             </div>}
                         <button type="submit">Registrati</button>
+                        <a href='/login'>You have already an account, Login.</a>
                     </>
                 }
             </form>

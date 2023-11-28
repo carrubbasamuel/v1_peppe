@@ -1,14 +1,9 @@
 'use client'
 
-
-/* 
-62qgftf12aegrocjpjbnv5gus8
-
-us-east-1_gBZIYM2wT */
-
 import { AuthenticationDetails, CognitoUser } from 'amazon-cognito-identity-js';
 import { useState } from 'react';
 import userPool from '../UserPool';
+
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -18,6 +13,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if(!username || !password){
+      setError('Compile all the fields')
+    }
+
     const authenticationData = {
       Username: username,
       Password: password,
@@ -25,7 +24,6 @@ const Login = () => {
 
     const authenticationDetails = new AuthenticationDetails(authenticationData);
 
-  
     const userData = {
       Username: username,
       Pool: userPool,
@@ -36,39 +34,58 @@ const Login = () => {
     cognitoUser.authenticateUser(authenticationDetails, {
       onSuccess: (session) => {
         console.log('Login success:', session);
-        // Qui puoi navigare a un'altra pagina o gestire il login con successo
+        
       },
       onFailure: (err) => {
         console.error('Login error:', err);
 
         if (err.code === 'UserNotConfirmedException') {
-          setError('Utente non confermato. Controlla la tua email per confermare il tuo account. <a href="/signup/verify_account">Verifica Account</a>.');
+          setError('User not confirmed. Check your email to confirm your account. <a href="/signup/verify_account">Verify Account</a>.');
+          setPassword('')
         } else if (err.code === 'NotAuthorizedException') {
-          setError('Nome utente o password errati.');
+          setError('Incorrect username or password.');
+          setPassword('')
         } else {
-          console.log('Errore sconosciuto:', err.message || err);
+          console.log('Unknown error:', err.message || err);
         }
       },
     });
   };
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div id='login'>
       <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        </label>
-        <br />
-        {error && <div>{error}</div>}
+        <h2>Hello, welcome back to VREAL</h2>
+        <p className='text-muted'>Enter your credentials to log in to VREAL</p>
+
+        <div className="form-floating mb-3 w-100">
+          <input
+            type="text"
+            className="form-control"
+            id="floatingUsername"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label htmlFor="floatingUsername">Username</label>
+        </div>
+
+        <div className="form-floating mb-3 w-100">
+          <input
+            type="password"
+            className="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label htmlFor="floatingPassword">Password</label>
+        </div>
+
+        {error && <div className="error-login">{error}</div>}
 
         <button type="submit">Login</button>
+        <a href='/signup'>Don't have an account? Sign up.</a>
       </form>
     </div>
   );
