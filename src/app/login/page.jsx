@@ -89,7 +89,7 @@ const Login = () => {
 
         <button type="submit">Login</button>
         <div className='google-btn' onClick={handleGoogleLogin}><FcGoogle /> Login with Google</div>
-        <a href='/signup'>Don't have an account? Sign up.</a>
+        <a href='/signup'>Don&rsquo;t have an account? Sign up.</a>
       </form>
 
       
