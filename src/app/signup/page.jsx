@@ -1,18 +1,21 @@
 'use client'
 
-import { CognitoUserAttribute } from 'amazon-cognito-identity-js';
+
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { BiLoaderAlt } from 'react-icons/bi';
 import { FaUserCheck } from "react-icons/fa";
 import useEncryption from '../Hooks/useEncryption';
-import userPool from '../UserPool';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { app } from '../FirebaseConfig';
+
 
 
 
 
 const Signup = () => {
     const router = useRouter();
+    const auth = getAuth(app);
     const { encrypt } = useEncryption(process.env.NEXT_PUBLIC_ENCRYPTION_KEY);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -24,49 +27,40 @@ const Signup = () => {
     
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
+    
         setError(null);
         setLoading(true);
         setPassword('');
         setConfirmPassword('');
-
-
+    
         if (!username || !password || !confirmPassword) {
             setError('All fields are required');
             setLoading(false);
-            
             return;
         }
-
-
+    
         if (password !== confirmPassword) {
             setError('The password and confirmation password do not match');
             setLoading(false);
             return;
         }
-
-        
-
-        const attributeList = [
-            new CognitoUserAttribute({
-                Name: 'email',
-                Value: username
-            })
-        ];
-
-        userPool.signUp(username, password, attributeList, null, (err, result) => {
-            if (err) {
-                setLoading(false);
-                setError(err.message || 'Error during the signup.');
-            } else {
-                const userCrypt = encrypt(result.user.getUsername());
-                setLoading(false);
-                setSuccess(true)
-                setTimeout(() => {
-                    router.push(`/signup/verify_account?username=${userCrypt}`);
-                }, 3000);
-            }
-        });
+    
+        try {
+            const userCredential = await createUserWithEmailAndPassword(auth, username, password);
+            const user = userCredential.user;
+            localStorage.setItem('user', JSON.stringify(user));
+    
+            setSuccess(true);
+            setLoading(false);
+    
+            setTimeout(() => {
+                router.push('/');
+            }, 3000);
+        } catch (error) {
+            setError(`Error during registration: ${error.message}`);
+            setLoading(false);
+        }
     };
 
     return (

@@ -1,60 +1,63 @@
 'use client'
 
-import { AuthenticationDetails, CognitoUser } from 'amazon-cognito-identity-js';
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useState } from 'react';
-import userPool from '../UserPool';
-
+import { app } from '../FirebaseConfig';
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
+  const auth = getAuth(app);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
+    setError(null);
 
-    if(!username || !password){
-      setError('Compile all the fields')
+    if (!username || !password) {
+      setError('Compile all the fields');
+      return;
     }
 
-    const authenticationData = {
-      Username: username,
-      Password: password,
-    };
+    try {
+      await signInWithEmailAndPassword(auth, username, password);
+      const user = auth.currentUser;
+      console.log('User logged in:', user);
+      localStorage.setItem('user', JSON.stringify(user));
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 3000);
+    } catch (error) {
+      setError(`Error during login: ${error.message}`);
+      console.log(error);
+    }
+  };
 
-    const authenticationDetails = new AuthenticationDetails(authenticationData);
+  const handleGoogleLogin = async () => {
+    setError(null);
 
-    const userData = {
-      Username: username,
-      Pool: userPool,
-    };
+    try {
+      const googleProvider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, googleProvider);
 
-    const cognitoUser = new CognitoUser(userData);
-
-    cognitoUser.authenticateUser(authenticationDetails, {
-      onSuccess: (session) => {
-        console.log('Login success:', session);
-        
-      },
-      onFailure: (err) => {
-        console.error('Login error:', err);
-
-        if (err.code === 'UserNotConfirmedException') {
-          setError('User not confirmed. Check your email to confirm your account. <a href="/signup/verify_account">Verify Account</a>.');
-          setPassword('')
-        } else if (err.code === 'NotAuthorizedException') {
-          setError('Incorrect username or password.');
-          setPassword('')
-        } else {
-          console.log('Unknown error:', err.message || err);
-        }
-      },
-    });
+      const user = result.user;
+      console.log('User logged in with Google:', user);
+      localStorage.setItem('user', JSON.stringify(user));
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 3000);
+    } catch (error) {
+      setError(`Error during Google login: ${error.message}`);
+      console.log(error);
+    }
   };
 
   return (
     <div id='login'>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        handleLogin();
+      }}>
         <h2>Hello, welcome back to VREAL</h2>
         <p className='text-muted'>Enter your credentials to log in to VREAL</p>
 
@@ -85,8 +88,12 @@ const Login = () => {
         {error && <div className="error-login">{error}</div>}
 
         <button type="submit">Login</button>
+        <div className='google-btn' onClick={handleGoogleLogin}><FcGoogle /> Login with Google</div>
         <a href='/signup'>Don't have an account? Sign up.</a>
       </form>
+
+      
+      
     </div>
   );
 };

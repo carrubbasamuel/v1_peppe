@@ -7,6 +7,14 @@ import './style.css';
 
 export default function NavBar() {
     const router = usePathname();
+    const user = localStorage.getItem('user') || null;
+    if (user){
+        JSON.parse(user);
+        console.log(user);
+    }else{
+        console.log('no user');
+    }
+    
 
     const [scrolled, setScrolled] = useState(false);
 

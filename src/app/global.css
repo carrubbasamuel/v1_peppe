@@ -46,7 +46,35 @@ body{
     box-shadow: none;
   }
   
-  
+  .form-control:focus{
+    border-color: #000!important;
+    box-shadow: none!important;
+  }
+
+
+  .google-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 20px!important;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .google-btn:hover{
+    background: #000;
+    color: #fff;
+  }
   button {
     width: 100%;
     height: 50px;
