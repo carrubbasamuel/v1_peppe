@@ -242,3 +242,11 @@ body{
     font-weight: 600;
     text-align: center;
   }
+
+
+  .anchor-to-home{
+    position: relative;
+    top: -25px;
+
+    font-size: 14px;
+  }

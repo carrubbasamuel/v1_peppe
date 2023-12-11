@@ -32,6 +32,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    padding: 0;
     margin: 0;
 }
 
@@ -78,6 +79,31 @@
     background-color: black;
 }
 
+.btn-login{
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-login{
+    text-decoration: none;
+}
+
+.btn-login:hover{
+    background-color: white;
+    color: black;
+}
+
 
 .nav-scroll{
     background-color: white;
@@ -108,6 +134,11 @@
     color: white!important;
 }
 
+
+.user-image{
+    border-radius: 50%;
+    overflow: hidden;
+}
 
 
 @media screen and (max-width: 768px){

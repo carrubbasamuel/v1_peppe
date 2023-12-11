@@ -1,15 +1,20 @@
 'use client'
 
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { useState } from 'react';
-import { app } from '../FirebaseConfig';
 import { FcGoogle } from "react-icons/fc";
+import { app } from '../FirebaseConfig';
+import { login } from '@/lib/features/user/userSlice';
+import { useAppDispatch } from '@/lib/hooks';
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
   const auth = getAuth(app);
+  const dispatch = useAppDispatch();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const router = useRouter();
 
   const handleLogin = async () => {
     setError(null);
@@ -22,10 +27,9 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, username, password);
       const user = auth.currentUser;
-      console.log('User logged in:', user);
-      localStorage.setItem('user', JSON.stringify(user));
+      dispatch(login(user));
       setTimeout(() => {
-        window.location.href = '/';
+        router.push('/home');
       }, 3000);
     } catch (error) {
       setError(`Error during login: ${error.message}`);
@@ -41,10 +45,9 @@ const Login = () => {
       const result = await signInWithPopup(auth, googleProvider);
 
       const user = result.user;
-      console.log('User logged in with Google:', user);
-      localStorage.setItem('user', JSON.stringify(user));
+      dispatch(login(user));
       setTimeout(() => {
-        window.location.href = '/';
+        router.push('/home');
       }, 3000);
     } catch (error) {
       setError(`Error during Google login: ${error.message}`);
@@ -58,6 +61,7 @@ const Login = () => {
         e.preventDefault();
         handleLogin();
       }}>
+        <a className='anchor-to-home' href='/'>Go back to site</a>
         <h2>Hello, welcome back to VREAL</h2>
         <p className='text-muted'>Enter your credentials to log in to VREAL</p>
 

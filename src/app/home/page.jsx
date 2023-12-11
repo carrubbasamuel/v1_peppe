@@ -6,12 +6,11 @@ import IconSection from '../components/icon-section/icon-section';
 import SecondSection from '../components/Home/secondSection/second-section';
 import './style.css';
 import ThirdSection from '../components/Home/thirdSection/third-section';
-import HomeLayout from './layout';
+
 
 
 export default function Home() {
     return (
-        <HomeLayout>
         <div id="home">
             <MainCarousel />
             <FirstSection />     
@@ -20,6 +19,5 @@ export default function Home() {
             <IconSection />
             <ThirdSection />
         </div>
-        </HomeLayout>
     )
 }
