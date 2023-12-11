@@ -3,8 +3,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./global.css";
 import StoreProvider from './StoreProvider';
-import Navbar from './components/navbar/navbar';
-import Footer from './components/footer/footer';
 
 
 
@@ -24,9 +22,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <StoreProvider>
-          <Navbar />
           {children}
-          <Footer />
         </StoreProvider>
         </body>
     </html>
