@@ -1,0 +1,15 @@
+.body-offcanvas-coockie{
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.offcanvas-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}

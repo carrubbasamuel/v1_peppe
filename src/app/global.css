@@ -1,6 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300&family=Urbanist:ital,wght@1,500&display=swap');
 
+/* Stile di selezione predefinito */
+::selection {
+  color: #000000; /* Colore del testo durante la selezione */
+  background: #ffebcd /* Colore dello sfondo durante la selezione (blu come esempio) */
+}
 
+/* Stile di selezione per Firefox */
+::-moz-selection {
+  color: #000000; /* Colore del testo durante la selezione */
+  background: #ffebcd
+}
 body{
     margin: 0;
     padding: 0;

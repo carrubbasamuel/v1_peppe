@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./global.css";
 import StoreProvider from './StoreProvider';
+import CookieConsentOffcanvasBootstrap from './components/cookie-offcanvas/cookie-offcanvas';
 
 
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body>
         <StoreProvider>
           {children}
+          <CookieConsentOffcanvasBootstrap />
         </StoreProvider>
         </body>
     </html>

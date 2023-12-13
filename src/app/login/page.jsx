@@ -29,7 +29,7 @@ const Login = () => {
       const user = auth.currentUser;
       dispatch(login(user));
       setTimeout(() => {
-        router.push('/home');
+        router.push('/pages/home');
       }, 3000);
     } catch (error) {
       setError(`Error during login: ${error.message}`);
@@ -47,7 +47,7 @@ const Login = () => {
       const user = result.user;
       dispatch(login(user));
       setTimeout(() => {
-        router.push('/home');
+        router.push('/pages/home');
       }, 3000);
     } catch (error) {
       setError(`Error during Google login: ${error.message}`);
