@@ -5,11 +5,17 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    height: 100%;
 }
 
 .offcanvas-body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    
+    
+}
+
+.offcanvas{
+    height: auto!important;
 }

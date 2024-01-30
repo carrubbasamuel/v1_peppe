@@ -43,7 +43,7 @@ export default function NavBar() {
 
     useEffect(() => {
         const handleClickOutside = (event) => {
-            const dropdown = document.getElementById('#dropdown');
+            const dropdown = document.getElementById('dropdown');
             if (dropdown && !dropdown.contains(event.target)) {
                 setDropOpen(false);
             }

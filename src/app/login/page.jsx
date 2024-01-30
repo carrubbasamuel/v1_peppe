@@ -61,7 +61,7 @@ const Login = () => {
         e.preventDefault();
         handleLogin();
       }}>
-        <a className='anchor-to-home' href='/'>Go back to site</a>
+        <a className='anchor-to-home' href='/pages/home'>Go back to site</a>
         <h2>Hello, welcome back to VREAL</h2>
         <p className='text-muted'>Enter your credentials to log in to VREAL</p>
 
