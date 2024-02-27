@@ -16,7 +16,6 @@ import { app } from '../FirebaseConfig';
 const Signup = () => {
     const router = useRouter();
     const auth = getAuth(app);
-    const { encrypt } = useEncryption(process.env.NEXT_PUBLIC_ENCRYPTION_KEY);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');

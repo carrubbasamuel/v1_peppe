@@ -9,6 +9,15 @@
     transition: all 0.2s ease-in-out;
 }
 
+#nav-pages{
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    padding: 0 50px;
+}
+
 #navbar>div{
     width: 1200px;
 }
@@ -228,4 +237,36 @@
         
     }
     
+}
+
+#nav-pages .navbar .menu ul li :not(.active-location){
+    color: black!important;
+}
+
+#nav-pages a.active-location{
+    color: white;
+}
+
+#nav-pages .navbar .menu ul li a::after{
+    background-color: black!important;
+}
+
+#nav-pages .navbar .menu ul li a:not(.active-location):hover{
+    color: white!important;
+}
+
+#nav-pages .navbar .menu ul li a:not(.active-location):hover::after{
+    height: 100%;
+}
+
+#nav-pages .navbar .menu ul li a.active-location{
+    background-color: black;
+}
+
+#nav-pages .navbar .menu ul li a.active-location::after{
+    height: 100%;
+}
+
+#nav-pages .navbar{
+    border-bottom: none!important;
 }

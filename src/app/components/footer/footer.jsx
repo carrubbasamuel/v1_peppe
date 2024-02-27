@@ -1,10 +1,13 @@
+'use client'
+import { usePathname } from 'next/navigation'
 import './style.css'
 
 const Footer = () => {
+    const router = usePathname()
     return (
         <>
 
-            <div id='footer'>
+            <div id='footer' className={router === '/' ? '' : 'footer-pages'}>
                 <div className="box-footer">
                     <h3>
                         New york Office

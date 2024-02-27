@@ -51,14 +51,7 @@
 
 
 .slick-dots{
-    position: absolute;
-    bottom: 150px;
-    width: 150px;
-    padding: 0;
-    margin: 0;
-    transform: rotate(90deg)!important;
-    left: 70px;
-    z-index: 2;
+    display: none;
 }
 
 .slick-dots li button::before{

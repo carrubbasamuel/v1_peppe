@@ -1,12 +1,12 @@
 'use client'
 
+import { logout } from '@/lib/features/user/userSlice';
+import { useAppDispatch } from '@/lib/hooks';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../../lib/hooks';
 import { FaArrowCircleRight } from 'react-icons/fa';
-import { logout } from '@/lib/features/user/userSlice';
-import { useAppDispatch } from '@/lib/hooks';
+import { useAppSelector } from '../../../lib/hooks';
 import './style.css';
 
 export default function NavBar() {
@@ -63,12 +63,12 @@ export default function NavBar() {
     };
 
     return (
-        <div id="navbar" className={scrolled ? 'nav-scroll' : ''}>
+        <div id={router !== '/' ? 'nav-pages' : 'navbar'} className={scrolled && router === '/' ? 'nav-scroll' : ''}>
             <div>
                 <div className='navbar'>
                     <div className='d-flex justify-content-between  m-4'>
                         <div className="logo">
-                            <Image src={scrolled ? "/asset/logo.png" : "/asset/logo-light.png"} alt="logo" width={120} height={30} />
+                            <Image src={scrolled || router !== '/' ? "/asset/logo.png" : "/asset/logo-light.png"} alt="logo" width={120} height={30} />
                         </div>
                         <div className="menu">
                             <ul>

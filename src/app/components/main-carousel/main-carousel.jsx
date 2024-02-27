@@ -50,7 +50,7 @@ export default function MainCarousel() {
             <Slider {...settings}>
                 {carouselImg.map((item, index) => (
                     <div key={index}>
-                        <div className='carousel-div-text'></div>
+                      
                         <img src={item.img} alt="img-carousel" loading="lazy"/>
                         <div className='main-text'>
                             <h1 className='carousel-cap'>{item.caption}</h1>
