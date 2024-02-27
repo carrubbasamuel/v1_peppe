@@ -1,12 +1,12 @@
 'use client'
 
+import { login } from '@/lib/features/user/userSlice';
+import { useAppDispatch } from '@/lib/hooks';
 import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { app } from '../FirebaseConfig';
-import { login } from '@/lib/features/user/userSlice';
-import { useAppDispatch } from '@/lib/hooks';
-import { useRouter } from 'next/navigation';
 
 const Login = () => {
   const auth = getAuth(app);
@@ -29,7 +29,7 @@ const Login = () => {
       const user = auth.currentUser;
       dispatch(login(user));
       setTimeout(() => {
-        router.push('/pages/home');
+        router.push('/');
       }, 3000);
     } catch (error) {
       setError(`Error during login: ${error.message}`);
@@ -47,7 +47,7 @@ const Login = () => {
       const user = result.user;
       dispatch(login(user));
       setTimeout(() => {
-        router.push('/pages/home');
+        router.push('/');
       }, 3000);
     } catch (error) {
       setError(`Error during Google login: ${error.message}`);
@@ -61,7 +61,7 @@ const Login = () => {
         e.preventDefault();
         handleLogin();
       }}>
-        <a className='anchor-to-home' href='/pages/home'>Go back to site</a>
+        <a className='anchor-to-home' href='/'>Go back to site</a>
         <h2>Hello, welcome back to VREAL</h2>
         <p className='text-muted'>Enter your credentials to log in to VREAL</p>
 

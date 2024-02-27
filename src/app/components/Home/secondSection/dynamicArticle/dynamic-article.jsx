@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
 
-const DynamicArticle = () => {
+const DynamicArticle = ({ setReference }) => {
     const type = [
         {
             type: 'history',
@@ -22,11 +22,13 @@ const DynamicArticle = () => {
 
     const handleChangeText = (selectedType, text) => {
         setArticle(text);
+        setReference(selectedType);
         setActiveType(selectedType);
     };
 
     useEffect(() => {
         setArticle(type[0].text);
+        setReference(type[0].type);
     }, []); 
 
     return (

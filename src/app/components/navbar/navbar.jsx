@@ -10,12 +10,15 @@ import { useAppSelector } from '../../../lib/hooks';
 import './style.css';
 
 export default function NavBar() {
+    
     const dispatch = useAppDispatch();
     const router = usePathname();
+    
     const [scrolled, setScrolled] = useState(false);
     const [log, setLog] = useState(null);
     const [dropOpen, setDropOpen] = useState(false);
 
+    
     const user = useAppSelector((state) => state.user);
 
     useEffect(() => {
@@ -61,6 +64,8 @@ export default function NavBar() {
     const handleUserImageClick = () => {
         setDropOpen(!dropOpen);
     };
+
+    if(router === '/login' || router ==='/signup') return null;
 
     return (
         <div id={router !== '/' ? 'nav-pages' : 'navbar'} className={scrolled && router === '/' ? 'nav-scroll' : ''}>

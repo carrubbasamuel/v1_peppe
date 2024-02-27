@@ -1,7 +1,8 @@
 'use client'
 
-import { Fade } from 'react-reveal';
+import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import { Fade } from 'react-reveal';
 import LinkComponent from '../../link-component/link-component';
 import Typewriter from '../../typewriter/Typewriter';
 import CarouselCostum from './carousel-costum/carousel-costum';
@@ -10,10 +11,11 @@ import './style.css';
 
 const SecondSection = () => {
     const isMobile = useMediaQuery({ maxWidth: 768 }); 
+    const [reference, setReference] = useState(null);
 
     return (
         <section id='second'>
-            <Fade bottom cascade>
+            <Fade top cascade >
                 <div className={`d-flex justify-content-end link-section ${isMobile ? 'mobile' : ''}`}>
                     <LinkComponent text={'About Us'} />
                 </div>
@@ -31,10 +33,10 @@ const SecondSection = () => {
 
             <div className='main-container'>
                 <Fade left={!isMobile} bottom={isMobile}>
-                    <CarouselCostum />
+                    <CarouselCostum reference={reference} />
                 </Fade>
                 <Fade right={!isMobile} bottom={isMobile}>
-                    <DynamicArticle />
+                    <DynamicArticle setReference={setReference} />
                 </Fade>
             </div>
         </section>

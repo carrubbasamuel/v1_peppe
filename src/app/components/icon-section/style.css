@@ -49,15 +49,7 @@ h5{
 
 
 .line {
-    position: absolute;
-    height: 1px;
-    width: 200px;
-    opacity: 0;
-    background-color: #000;
-    top: 50%;
-    right: -70%;
-    transform-origin: left;
-    animation: enterLine 0.5s forwards;
+    
 }
 
 

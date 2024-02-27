@@ -1,9 +1,11 @@
 'use client'
 
 
-import { FaCreativeCommonsSa, FaGlobeAfrica } from 'react-icons/fa';
-import { LiaArtstation, LiaDigitalOcean } from 'react-icons/lia';
+import { BsFillPeopleFill } from 'react-icons/bs';
+import { FaCreativeCommonsSa } from 'react-icons/fa';
+import { MdMonitor } from 'react-icons/md';
 import { useInView } from 'react-intersection-observer';
+import { RiDatabaseLine } from 'react-icons/ri';
 import './style.css';
 
 const IconSection = () => {
@@ -19,10 +21,8 @@ const IconSection = () => {
             {inView && <>
                 <div className='inner-icon'>
                     <div className='box'>
-                        <FaGlobeAfrica size={70} className='icon' />
-                        <div className='number'>
-                            .1
-                        </div>
+                        <BsFillPeopleFill  size={70} className='icon' />
+                        
                         <div className='line' style={{ animationDelay: '0.2s' }}></div>
                     </div>
                     <div className="box-text" style={{ animationDelay: '0.1s' }}>
@@ -38,10 +38,8 @@ const IconSection = () => {
 
                 <div className='inner-icon'>
                     <div className='box' style={{ animationDelay: '0.4s' }}>
-                        <LiaDigitalOcean size={70} className='icon' />
-                        <div className='number'>
-                            .2
-                        </div>
+                    <RiDatabaseLine  size={70} className='icon' />
+                        
                         <div className='line' style={{ animationDelay: '0.6s' }}></div>
                     </div>
                     <div className="box-text" style={{ animationDelay: '0.5s' }}>
@@ -57,10 +55,8 @@ const IconSection = () => {
 
                 <div className='inner-icon'>
                     <div className='box' style={{ animationDelay: '0.8s' }}>
-                        <LiaArtstation size={70} className='icon' />
-                        <div className='number'>
-                            .3
-                        </div>
+                      <MdMonitor  size={70} className='icon' />
+                        
                         <div className='line' style={{ animationDelay: '1s' }}></div>
                     </div>
                     <div className="box-text" style={{ animationDelay: '0.9s' }}>
@@ -77,9 +73,7 @@ const IconSection = () => {
                 <div className='inner-icon '>
                     <div className='box' style={{ animationDelay: '1.2s' }}>
                         <FaCreativeCommonsSa size={70} className='icon' />
-                        <div className='number'>
-                            .4
-                        </div>
+                        
                     </div>
                     <div className="box-text" style={{ animationDelay: '1.3s' }}>
                         <h5>
