@@ -2,6 +2,7 @@
 
 
 import { Fade } from 'react-reveal';
+import DownloadButton from '../../downloadButton/downloadButton';
 import LinkComponent from '../../link-component/link-component';
 import Typewriter from '../../typewriter/Typewriter';
 import ChangeSubtitle from './changeSub';
@@ -10,7 +11,8 @@ import './style.css';
 const ThirdSection = () => {
     return (
         <section>
-            <div id='third-section'>
+
+            <div class='third-section'>
                 <Fade bottom cascade>
 
                     <div className='about-link'>
@@ -21,8 +23,6 @@ const ThirdSection = () => {
                     <div className='third-title'>
                         <Typewriter text={'"Stay Connected"'} />
                     </div>
-
-
                 </Fade>
 
                 <hr />

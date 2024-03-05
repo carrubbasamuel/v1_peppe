@@ -6,6 +6,7 @@ import WordCarousel from './components/carousel-of-words/carousel-of-words';
 
 import IconSection from './components/icon-section/icon-section';
 import MainCarousel from './components/main-carousel/main-carousel';
+import DownloadSection from './components/Home/downloadSection/downloadSection';
 
 
 
@@ -17,6 +18,7 @@ export default function Home() {
             <FirstSection />     
             <WordCarousel />
             <SecondSection />
+            <DownloadSection />
             <IconSection />
             <ThirdSection />
         </div>
